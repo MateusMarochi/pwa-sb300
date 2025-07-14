@@ -21,11 +21,20 @@ export const metadata: Metadata = {
     capable: true,
     title: 'SB300 PWA',
   },
-  icons: [
-    { rel: 'icon', url: '/icon-192x192.png' },
-    { rel: 'apple-touch-icon', url: '/icon-180x180.png' },
-    { rel: 'icon', url: '/icon-512x512.png', sizes: '512x512' },
-  ],
+  icons: {
+    icon: [
+      '/icon-192x192.png',
+      { url: '/icon-512x512.png', sizes: '512x512' },
+    ],
+    apple: { url: '/icon-180x180.png', sizes: '180x180' },
+    other: [
+      {
+        rel: 'apple-touch-icon-precomposed',
+        url: '/icon-180x180.png',
+        sizes: '180x180',
+      },
+    ],
+  },
 }
 
 export const viewport = {
