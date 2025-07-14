@@ -6,7 +6,7 @@ export default function Home() {
     <>
       <Box
         sx={{
-          background: 'linear-gradient(135deg, #4A90E2 0%, #3A65A4 100%)',
+          background: 'linear-gradient(45deg, #F76902 0%, #0B5D2D 50%)',
           color: 'white',
           py: 8,
           textAlign: 'center',
