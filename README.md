@@ -50,3 +50,10 @@ Consulte `package.json` para a lista completa.
 - Utilize `npm run lint` para verificar o estilo de código.
 - Use `npm run build` para garantir que o projeto compila sem erros.
 - Abra pull requests descrevendo claramente as mudanças realizadas.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## License
+
+This project is released under the [Terris Tecnologia Proprietary License](LICENSE).
+Copying or commercial use without written permission is prohibited.
