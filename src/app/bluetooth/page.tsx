@@ -12,11 +12,16 @@ import BluetoothIcon from '@mui/icons-material/Bluetooth'
 
 export default function BluetoothPage() {
   const [devices, setDevices] = useState<BluetoothDevice[]>([])
+  const [supported, setSupported] = useState(true)
 
   useEffect(() => {
+    if (!navigator.bluetooth?.getDevices) {
+      setSupported(false)
+      return
+    }
     const load = async () => {
       try {
-        const known = await navigator.bluetooth.getDevices?.()
+        const known = await navigator.bluetooth.getDevices()
         if (known) setDevices(known as BluetoothDevice[])
       } catch (e) {
         console.error(e)
@@ -26,6 +31,10 @@ export default function BluetoothPage() {
   }, [])
 
   const handleSearch = async () => {
+    if (!navigator.bluetooth?.requestDevice) {
+      alert('Web Bluetooth n\u00e3o \u00e9 suportado neste navegador.')
+      return
+    }
     try {
       const device = await navigator.bluetooth.requestDevice({
         acceptAllDevices: true,
@@ -46,7 +55,18 @@ export default function BluetoothPage() {
       <Typography variant="h4" gutterBottom>
         Dispositivos Bluetooth
       </Typography>
-      <Button variant="contained" startIcon={<BluetoothIcon />} onClick={handleSearch} sx={{ mb: 2 }}>
+      {!supported && (
+        <Typography color="error" gutterBottom>
+          Seu navegador n\u00e3o suporta Web Bluetooth.
+        </Typography>
+      )}
+      <Button
+        variant="contained"
+        startIcon={<BluetoothIcon />}
+        onClick={handleSearch}
+        disabled={!supported}
+        sx={{ mb: 2 }}
+      >
         Buscar dispositivo
       </Button>
       <List>
@@ -59,7 +79,7 @@ export default function BluetoothPage() {
             <ListItem key={device.id} sx={{ color }}>
               <ListItemText primary={name} secondary={device.id} />
             </ListItem>
-            )
+          )
         })}
       </List>
     </Container>
