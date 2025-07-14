@@ -14,9 +14,12 @@ npm install
 
 ```bash
 npm run dev
+# ou para testar funcionalidades que exigem HTTPS
+npm run dev:https
 ```
 
 O site ficará disponível em [http://localhost:3000](http://localhost:3000).
+No modo HTTPS, acesse [https://localhost:3000](https://localhost:3000).
 
 Para gerar o build de produção:
 
@@ -28,6 +31,7 @@ npm start
 ## Scripts disponíveis
 
 - `npm run dev` – inicia o modo de desenvolvimento.
+- `npm run dev:https` – inicia o modo de desenvolvimento com HTTPS.
 - `npm run build` – gera a versão de produção.
 - `npm start` – executa o servidor após o build.
 - `npm run lint` – executa o ESLint.
