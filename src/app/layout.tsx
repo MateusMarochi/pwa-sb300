@@ -17,15 +17,19 @@ export const metadata: Metadata = {
   title: 'SB300 PWA',
   description: 'Hello World PWA',
   manifest: '/manifest.json',
-  themeColor: '#4A90E2',
   appleWebApp: {
     capable: true,
     title: 'SB300 PWA',
   },
   icons: [
     { rel: 'icon', url: '/icon-192x192.png' },
-    { rel: 'apple-touch-icon', url: '/icon-192x192.png' },
+    { rel: 'apple-touch-icon', url: '/icon-180x180.png' },
+    { rel: 'icon', url: '/icon-512x512.png', sizes: '512x512' },
   ],
+}
+
+export const viewport = {
+  themeColor: '#4A90E2',
 }
 
 export default function RootLayout({
