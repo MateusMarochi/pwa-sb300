@@ -1,5 +1,13 @@
 'use client'
-import { Box, Container, Typography, List, ListItem } from '@mui/material'
+import {
+  Box,
+  Container,
+  Typography,
+  List,
+  ListItem,
+  IconButton,
+} from '@mui/material'
+import BluetoothIcon from '@mui/icons-material/Bluetooth'
 
 export default function Home() {
   return (
@@ -40,6 +48,17 @@ export default function Home() {
             <strong>Adicionar à Tela de Início</strong>.
           </ListItem>
         </List>
+      </Container>
+      <Container sx={{ py: 4, textAlign: 'center' }}>
+        <Typography variant="h5" component="h2" gutterBottom>
+          Conectar ao SB300
+        </Typography>
+        <Typography gutterBottom>
+          Toque no ícone abaixo para buscar dispositivos Bluetooth.
+        </Typography>
+        <IconButton href="/bluetooth" color="primary" sx={{ fontSize: 48 }}>
+          <BluetoothIcon fontSize="inherit" />
+        </IconButton>
       </Container>
     </>
   )
