@@ -4,6 +4,7 @@ import { ReactNode } from 'react'
 
 const theme = createTheme({
   palette: {
+    mode: 'dark',
     primary: { main: '#4A90E2' },
   },
 })
